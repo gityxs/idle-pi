@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+        integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+        integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51903017-2"></script>
+    <script async>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-51903017-2');
+    </script>
+    <title>Idle Pi</title>
+</head>
+
+
+<body>
+        <div id="numberContainer"></div>
+    <div id="game">
+        <div id="bigcol">
+                <div id="newsContainer">
+                    <div id="news"></div>
+                </div>
+        <div id="column40">
+            <div id="topPartL">
+                <div id="scoreBox">
+                    <div id="score">0 Pies</div>
+                    <div id="scorePerSec">per second: 0</div>
+                    <img id="pi" class="thepi" src="Sprites/pi_sprite.png" style="height:min(25vh,18vw)"></img>
+                </div>
+                <div id="thoughtsContainer">
+                    <img id="brain" src="Sprites/brain_sprite.png"></img>
+                    <div id="thoughts">Thoughts: 0</div>
+                </div>
+            </div>
+        </div>
+        <div id="column60">
+            <div id="topPart">
+                <div id="QuestionBox">
+                    <div id="canvasContainer" style="display: none; padding-top: 20px;"></div>
+                    <div id="question" class="tooltip1"></div>
+                    <div id="animationContainer"></div>
+                </div>
+                <div id="options"></div>
+                <div id="spriteContainer"></div>
+            </div>
+        </div>
+        </div>
+        <div id="thirdCol">
+            <div id="upgradeShop">
+                <div id="shopTitle">Upgrades</div>
+            </div>
+            <div id="researchShop">
+                <div id="shopTitle">Research</div>
+            </div>
+            <div id="shop">
+             </div>
+        </div>
+    </div>
+    <div id="achievement-popup" class="hidden">
+        <span id="close-popup" onclick="toggleAchievementPopup()">&times;</span>
+        <h2 class="titleStyle">Achievements</h2>
+        <div id="achievements-list">
+            <!-- Achievements will be listed here -->
+        </div>
+    </div>
+    <div id="about-popup" class="hidden">
+        <span id="close-popup" onclick="toggleAboutPopup()">&times;</span>
+        <h2 class="titleStyle">About</h2>
+        This is an idle game inspired by <a href="https://orteil.dashnet.org/cookieclicker/">Cookie Clicker</a>, where we've replaced clicking on the cookie with solving math problems.<br><br>Email <a href="mailto:support@bigprimes.org">support@bigprimes.org</a> with any bugs or ideas!<br><br>
+    </div>
+    <div id="researchModal" class="hidden">
+        <div id="researchTokens">Research tokens: 0</div> 
+        <span id="close-popup" onclick="toggleResearchPopup()">&times;</span>
+        <div id="svgContainer">
+            <span id="upgradeTree"></span>
+        </div>
+    </div>
+    <button id="view-achievements-button" onclick="toggleAchievementPopup()">View Achievements</button>
+    <button id="view-research-button" onclick="toggleResearchPopup()">View Research Tree</button>
+    <button id="view-about-button" onclick="toggleAboutPopup()">About</button>
+    <button id="view-home-button" onclick=""><a href="/" style="text-decoration: none; color: white">Home</a></button>
+    <div id="achievement-notification" class="hidden">
+        <span id="close-notification" onclick="closeAchievementNotification()">&times;</span>
+        <img id="achievement-icon" src="" alt="Achievement Icon" />
+        <div id="achievement-text-content">
+            <strong><div id="achieve-title"></div></strong>
+            <span id="achievement-text"></span>
+        </div>
+    </div>
+    <script src="drawing.js"></script>
+    <script src="utils.js"></script>
+    <script src="data.js"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,683 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #84b4dc3f;
+    margin: 0px;
+    overflow-y: hidden;
+    height: 100%;
+    font-size: 1.3rem;
+}
+
+#question {
+    /*min-height: 80px;*/
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15vh;
+}
+
+#game {
+    margin: 0px;
+    overflow-x: hidden; 
+    height: 100%;
+    box-sizing: border-box; /* Includes padding in the element's total width and height */
+}
+
+.MathJax_Display {
+    text-align: center;
+}
+
+.wrapperUpgrade {
+    position: relative;
+    display: inline-block;
+}
+
+#newsContainer {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100px; /* Adjust as needed */
+    margin-left: 8px;
+    margin-right: 8px;
+    border-bottom: 3px solid #0a0a0a;
+    /*background-color: #d9d5e1;
+    border: 3px solid #0a0a0a;
+    border-radius: 0px;*/
+}
+
+.researchButton {
+    font-size: 1.1rem;
+}
+
+#news {
+    font-style: italic;
+}
+
+#shopTitle {
+    font-family: 'Merit';
+    padding: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.titleStyle {
+    font-family: 'Merit';
+    padding: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#thoughts {
+    color: rgb(196, 104, 104);
+    font-family: 'Merit';
+}
+
+#scoreBox {
+    margin-top: 20px;
+    font-family: 'Merit';
+    color: purple;
+}
+
+#options {
+    margin: 10px;
+}
+
+.option {
+    margin: 3px;
+    padding: 13px;
+    min-width: 70px;
+    font-size: 1.3rem;
+}
+
+#score {
+    font-size: 2.2rem;
+    /* Increase size as desired */
+}
+
+button {
+    margin: 2px;
+    padding: 5px 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+#shop {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #eef;
+    max-height: calc(100vh - 290px);
+    overflow-y: scroll; 
+    position: relative; 
+}
+
+
+#researchShop {
+    position: relative; 
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #eef;
+    height: 100px;
+}
+
+#upgradeShop {
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #eef;
+    height: 100px;
+    overflow-y: scroll; /* Corrected property */
+    overflow-x: hidden;
+}
+
+#toolLibrary {
+    height: calc(100vh - 265px);
+    overflow-y: scroll;
+}
+
+.topic {
+    display: inline;
+    /* Display inline for normal text wrapping */
+}
+
+.topic:not(:last-child)::after {
+    content: ", ";
+    /* Add a comma and space after each topic except the last */
+}
+
+.display2 {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgb(222, 228, 207);
+}
+
+.display {
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgb(222, 228, 207);
+}
+
+.display img {
+    height: 50px;
+    /* Adjust size as needed */
+    vertical-align: middle;
+}
+
+#bigcol {
+    float:left;
+    width: 67%;
+}
+
+#column40 {
+    float: left;
+    width: 40%;
+}
+#column60 {
+    float: left;
+    width: 58%;
+}
+
+#QuestionBox {
+    min-height: 220px;
+    max-height: 320px; /* was 330!*/
+    padding-bottom: 10px;
+    width: 100%;
+    /*background-image: url("Sprites/blackboard_sprite.png");
+    background-size: contain;
+    background-repeat: no-repeat;*/
+}
+
+#topPart {
+    height: 100%;
+}
+#topPartL {
+    border-right: 2px solid #000000;
+    height: 100%;
+}
+
+#thirdCol {
+    float: right;
+    width: 33%;
+}
+
+.animate-score {
+    position: absolute;
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: floatUpFade 2s ease-out;
+    color: red;
+    z-index: 1000;
+}
+
+@keyframes floatUpFade {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-50px);
+        /* Adjust as needed */
+        opacity: 0;
+    }
+}
+
+/* Permanent scrollbar */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.tooltip1 {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip1 .tooltiptext {
+    visibility: hidden;
+    width: 500px;
+    padding: 5px;
+    font-size: 1.2rem;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -250px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip1 .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip1:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.upgrade img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.upgrade:disabled img {
+    height: 50px;
+    opacity: 10%;
+    /* Adjust size as needed */
+    vertical-align: middle;
+}
+
+#nextOperation img {
+    vertical-align: middle;
+}
+
+#nextOperation:disabled img {
+    opacity: 10%;
+    vertical-align: middle;
+}
+
+.toolname {
+    font-family: 'Merit'; 
+    font-size: 1.3rem;
+}
+
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.tooltip2 img {
+    height: 70px;
+    vertical-align: left;
+}
+
+.tooltip2:disabled {
+    background-color: #c0bdbdd9;
+}
+
+.tooltip2:disabled img {
+    height: 70px;
+    opacity: 50%;
+    /* Adjust size as needed */
+    vertical-align: middle;
+}
+
+.container {
+    display: flex;
+}
+
+.container-image {
+    /*height: 100%; /* Set the image height to cover the container height */
+    width: 80px; /* Maintain the image aspect ratio */
+    /*max-width: 70px;*/
+    object-fit: contain;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column; /* Aligns the text vertically */
+    justify-content: center; /* Centers the text vertically */
+    padding-left: 20px; /* Optional spacing between image and text */
+    text-align: left;
+}
+
+#brain {
+    height: 15vh;
+    margin-top: 50px;
+    vertical-align: left;
+    /*transition: all 0.05s ease; /* Animation effect */
+    filter: sepia(0) saturate(1) hue-rotate(0deg);
+    transition: all 0.5s ease; /* Smooth transition for filter changes */
+}
+
+#brain.clicked {
+    transform: scale(0.9); /* Slightly increase the size */
+}
+
+#pi {
+    transition: all 0.05s ease; /* Animation effect */
+}
+#pi.clicked {
+    transform: scale(0.95);
+}
+
+
+
+.tippy-box[data-theme~='left-align'] {
+    text-align: left;
+}
+
+.topoftooltip {
+    display: flex;
+    align-items: center; /* Align image and text vertically */
+    border-bottom: 0.5px solid rgba(255, 255, 0, .5);
+    margin-bottom: 5px;
+}
+
+.topoftooltiptext {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Spacing between image and text */
+}
+
+.topoftooltip img {
+    width: 70px; /* Fixed width, height will be auto */
+}
+
+.custom-tooltip {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .custom-tooltip img {
+    width: 70px; 
+    height: auto;
+    margin-right: 20px; 
+} */
+
+.tooltip-text {
+    margin: 0;
+    padding: 0;
+}
+
+.tooltip-data1 {
+    font-size: 1rem;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-style: italic;
+}
+
+.tooltip-price {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color:rgb(158, 164, 239);
+    font-weight: bold;
+}
+
+.tooltip-title {
+    font-weight: bold; /* Make the title bold */
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+
+@font-face {
+    font-family: 'Merit';
+    src: url('Fonts/merit4-webfont.woff2') format('woff2'),
+         url('Fonts/merit4-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#numberContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.number {
+    position: absolute;
+    animation: bounce infinite;
+    font-size:45px; /* Adjust size as needed */
+    z-index: 10000000;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translate(var(--translateX), var(--translateY));; } /* Adjust for bounce height */
+}
+
+
+#spriteContainer {
+    width: 100%;
+    height: 200px;
+    margin-left: 20px;
+    margin-top: 75px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    position: relative; /* Needed for absolute positioning of sprites */
+}
+
+.sprite {
+    height: 65px; /* Height is 1/5 of the container */
+    position: absolute; /* Absolute positioning */
+    transition: all 0.05s ease; /* Animation effect */
+}
+.sprite.clicked {
+    transform: scale(0.95);
+}
+
+
+.hidden {
+    display: none;
+}
+
+#achievement-notification {
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #ffd700;
+    padding: 10px;
+    padding-right: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: auto; /* Adjust width as needed */
+    max-width: 300px; /* Prevents it from taking full width */
+}
+
+#achievement-content {
+    display: flex;
+    flex-direction: row; /* Aligns children in a row */
+    align-items: center; /* Aligns children vertically */
+}
+
+#achievement-details {
+    display: flex;
+    flex-direction: column; /* Stacks title and text in a column */
+    justify-content: center; /* Centers title and text vertically */
+    flex-grow: 1; /* Allows this column to take up remaining space */
+}
+
+#achievement-icon {
+    width: 50px;
+    margin-right: 10px;
+}
+
+#achievement-text-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#achievement-text {
+    vertical-align: middle;
+}
+
+#close-notification {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+#achievement-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 70vw; /* Adjust based on your preference */
+}
+
+#about-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 50vw; /* Adjust based on your preference */
+}
+
+#achievements-list {
+    max-height: 70vh; /* Adjust based on your preference */
+    overflow-y: auto; /* Enables scrolling */
+    margin-top: 10px;
+}
+
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+#view-achievements-button {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#view-research-button {
+    position: fixed;
+    bottom: 10px;
+    left: 150px;
+    padding: 10px;
+    background-color: #1f5c87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#view-about-button {
+    position: fixed;
+    bottom: 10px;
+    left: 295px;
+    padding: 10px;
+    background-color: #c7ba8a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#view-home-button {
+    position: fixed;
+    bottom: 10px;
+    left: 355px;
+    padding: 10px;
+    background-color: #0605023b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#researchModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 70vw; /* Adjust based on your preference */
+    height: 60vh;
+}
+
+.node {
+    cursor: pointer;
+}
+.node circle {
+    fill: #fff;
+    stroke-width: 5px;
+}
+.node text {
+    font: 12px sans-serif;
+}
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+#treePic {
+    /*background-color:#c7c8f0;*/
+}
+
+#svgContainer {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
